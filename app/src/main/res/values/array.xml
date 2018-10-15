@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自动补全Email 前面用户的输入 -->
+    <string-array name="auto_complete_emails_input">
+        <item>\@</item>
+        <item>\@g</item>
+        <item>\@gm</item>
+        <item>\@gma</item>
+        <item>\@gmai</item>
+        <item>\@gmail</item>
+        <item>\@gmail.</item>
+        <item>\@gmail.c</item>
+        <item>\@gmail.co</item>
+        <item>\@h</item>
+        <item>\@ho</item>
+        <item>\@hot</item>
+        <item>\@hotm</item>
+        <item>\@hotma</item>
+        <item>\@hotmai</item>
+        <item>\@hotmail</item>
+        <item>\@hotmail.</item>
+        <item>\@hotmail.c</item>
+        <item>\@hotmail.co</item>
+        <item>\@y</item>
+        <item>\@ya</item>
+        <item>\@yah</item>
+        <item>\@yaho</item>
+        <item>\@yahoo</item>
+        <item>\@yahoo.</item>
+        <item>\@yahoo.c</item>
+        <item>\@yahoo.co</item>
+    </string-array>
+
+    <!-- 自动补全Email 后面的提示 -->
+    <string-array name="auto_complete_emails_notify">
+        <item>gmail.com</item>
+        <item>mail.com</item>
+        <item>ail.com</item>
+        <item>il.com</item>
+        <item>l.com</item>
+        <item>.com</item>
+        <item>com</item>
+        <item>om</item>
+        <item>m</item>
+        <item>otmail.com</item>
+        <item>tmail.com</item>
+        <item>mail.com</item>
+        <item>ail.com</item>
+        <item>il.com</item>
+        <item>l.com</item>
+        <item>.com</item>
+        <item>com</item>
+        <item>om</item>
+        <item>m</item>
+        <item>ahoo.com</item>
+        <item>hoo.com</item>
+        <item>oo.com</item>
+        <item>o.com</item>
+        <item>.com</item>
+        <item>com</item>
+        <item>om</item>
+        <item>m</item>
+    </string-array>
+</resources>

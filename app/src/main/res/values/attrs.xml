@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 邮箱自动补全EditText -->
+    <declare-styleable name="AutoCompleteEditText">
+        <attr name="min_text_size" format="dimension"/>
+        <attr name="notify_text_color" format="color"/>
+        <attr name="open_auto_complete" format="boolean"/>
+        <attr name="open_auto_change_size" format="boolean"/>
+    </declare-styleable>
+</resources>
