@@ -1,4 +1,4 @@
-package com.kevin.autocompleteedittext
+package com.kevin.autocompletetest
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

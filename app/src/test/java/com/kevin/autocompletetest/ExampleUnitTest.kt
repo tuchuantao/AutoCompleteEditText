@@ -1,4 +1,4 @@
-package com.kevin.autocompleteedittext
+package com.kevin.autocompletetest
 
 import org.junit.Test
 

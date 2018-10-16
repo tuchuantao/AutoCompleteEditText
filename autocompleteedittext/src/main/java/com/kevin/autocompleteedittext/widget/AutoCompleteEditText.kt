@@ -3,7 +3,6 @@ package com.kevin.autocompleteedittext.widget
 import java.util.HashMap
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -17,7 +16,6 @@ import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
-
 import com.kevin.autocompleteedittext.R
 import com.kevin.autocompleteedittext.util.ModUtils
 
@@ -40,7 +38,7 @@ class AutoCompleteEditText : AppCompatEditText, TextWatcher, View.OnFocusChangeL
     private var mDrawable: BitmapDrawable? = null
     private var notifyText = ""
 
-    private var notifyTextColor: Int = 0
+    private var notifyTextColor: Int = Color.BLUE
     private var normalTextSize: Float = 0F
     private var minTextSize: Float = 0F
     private var currentTextSize: Float = 0F
@@ -56,10 +54,10 @@ class AutoCompleteEditText : AppCompatEditText, TextWatcher, View.OnFocusChangeL
 
     @JvmOverloads
     constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : super(context, attrs, defStyle) {
-        init(context, attrs)
+        init(context)
     }
 
-    private fun init(context: Context, attrs: AttributeSet?) {
+    private fun init(context: Context) {
         mContext = context
         addTextChangedListener(this)
         onFocusChangeListener = this
@@ -68,21 +66,6 @@ class AutoCompleteEditText : AppCompatEditText, TextWatcher, View.OnFocusChangeL
         normalTextSize = textSize
         currentTextSize = textSize
         minTextSize = context.resources.getDimension(R.dimen.text_size_17)
-
-        if (null != attrs) {
-            var typedArray: TypedArray? = null
-            try {
-                typedArray = context.obtainStyledAttributes(attrs, R.styleable.AutoCompleteEditText)
-                notifyTextColor = typedArray!!.getColor(R.styleable.AutoCompleteEditText_notify_text_color, notifyTextColor)
-                minTextSize = typedArray.getDimension(R.styleable.AutoCompleteEditText_min_text_size, minTextSize)
-                openAutoComplete = typedArray.getBoolean(R.styleable.AutoCompleteEditText_open_auto_complete, openAutoComplete)
-                autoChangeSize = typedArray.getBoolean(R.styleable.AutoCompleteEditText_open_auto_change_size, autoChangeSize)
-            } finally {
-                if (null != typedArray) {
-                    typedArray.recycle()
-                }
-            }
-        }
 
         // 初始化画笔
         mPaint = Paint()
@@ -97,6 +80,32 @@ class AutoCompleteEditText : AppCompatEditText, TextWatcher, View.OnFocusChangeL
      */
     fun initEmail(mAutoData: HashMap<String, String>) {
         this.mAutoData = mAutoData
+    }
+
+    /**
+     * 设置提醒的字体颜色
+     */
+    fun setNotifyTextColor(notifyTextColor: Int) {
+        this.notifyTextColor = notifyTextColor
+    }
+
+    /**
+     * 设置缩放时的字体大小
+     */
+    fun setMinTextSize(minTextSize: Float) {
+        if (minTextSize < textSize) {
+            this.minTextSize = minTextSize
+            this.autoChangeSize = true
+        } else {
+            this.autoChangeSize = false
+        }
+    }
+
+    /**
+     * 设置是否开启自动提醒
+     */
+    fun setAutoCompleteState(openAutoComplete: Boolean) {
+        this.openAutoComplete = openAutoComplete
     }
 
     override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
