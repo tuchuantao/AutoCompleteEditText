@@ -14,5 +14,30 @@
 <img src="./imgs/icon_notify.png" width=324 height=576 />
 
 ```
+    // 在Build.gradle文件添加依赖
+    implementation 'com.kevintu:autocompleteedittext:1.0.0'
+
+
+    // 布局文件中使用
+        <com.kevin.autocompleteedittext.widget.AutoCompleteEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"
+            android:background="#40000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="请输入内容"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textCursorDrawable="@null"
+            android:textSize="28sp"/>
+
+
+    // 具体看使用方法看源码
 
 ```
