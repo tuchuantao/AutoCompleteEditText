@@ -2,10 +2,15 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
-ext {
-    PUBLISH_GROUP_ID = 'chuantaotu'
-    PUBLISH_ARTIFACT_ID = 'autocompleteedittext'
-    PUBLISH_VERSION = '1.0.0'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'chuantaotu'
+    groupId = 'com.kevintu'
+    artifactId = 'autocompleteedittext' //项目名称
+    publishVersion = '1.0.0' //版本号
+    desc = 'Custom email EditText, can auto complete email address.' //项目描述。可空。
+    website = 'https://github.com/tuchuantao/AutoCompleteEditText' //项目地址，一般填github地址。可空。
 }
 
 android {
@@ -28,6 +33,9 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -41,4 +49,17 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+
+
+/**
+ *
+ * ext {
+ *     PUBLISH_GROUP_ID = 'com.kevintu'
+ *     PUBLISH_ARTIFACT_ID = 'autocompleteedittext'
+ *     PUBLISH_VERSION = '1.0.0'
+ * }
+ *
+ * apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+ *
+ * gradlew clean build generateRelease
+ */
