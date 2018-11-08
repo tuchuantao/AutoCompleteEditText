@@ -6,7 +6,7 @@
 
 ### 效果图
 <center class="half">
-    <img src="./imgs/icon_normal.png" width=324 height=576 /><img src="./imgs/icon_shrink.png" width=324 height=576 /><img src="./imgs/icon_notify.png" width=324 height=576 />
+    <img src="./imgs/icon_normal.png" width=324/><img src="./imgs/icon_shrink.png" width=324/><img src="./imgs/icon_notify.png" width=324/>
 </center>
 
 ```
